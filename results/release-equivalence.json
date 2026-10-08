@@ -1,0 +1,20 @@
+{
+  "status": "passed",
+  "cases": [
+    {
+      "case": "random_same_42_seat0",
+      "observations": 58,
+      "models": 2,
+      "actions_and_log_probabilities_and_values_identical": true,
+      "engine_imports_blocked": true
+    },
+    {
+      "case": "random_target_42_seat0",
+      "observations": 64,
+      "models": 2,
+      "actions_and_log_probabilities_and_values_identical": true,
+      "engine_imports_blocked": true
+    }
+  ],
+  "scope": "CPU neural inference on recorded states; simulation search not compared"
+}

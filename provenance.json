@@ -1,0 +1,488 @@
+{
+  "schema_version": 1,
+  "scope": "runtime_and_inference_assets",
+  "source_archive": "User-provided Pokemon submission archive (validated extraction)",
+  "source_submission_manifest_sha256": "5c214250b1252ba652b651e3a4502732940e35286592e3f6539ec992d22b5ea5",
+  "selection": "Transitive static imports from main.py plus engine_battle_state.py, including deferred imports and package initializers.",
+  "source_python_files": 300,
+  "release_python_runtime_files": 46,
+  "transform_scope": [
+    "Remove try wrappers with no else, no handlers or one bare except that only reraises, and no finally or a finally containing only pass.",
+    "Remove assignments to the generated __equivalent_layout_profile__ tuple after confirming no selected module reads that name.",
+    "Normalize Python formatting with ast.unparse; preserve conditions, imports, executable expressions, and all other statements."
+  ],
+  "validation": "Each normalized file compiles and its AST matches the deliberately transformed original AST. Asset SHA-256 values match. Runtime equivalence tests are recorded separately.",
+  "semantic_limits": "Source line numbers, formatting, exception tracing events, and generated layout metadata change. No claim of identical debugging or introspection behavior.",
+  "excluded": [
+    "Unreferenced training, diagnostic, packaging, and experiment scripts",
+    "Whitespace-only original readme",
+    "Original inventories containing local machine paths",
+    "policy_entry_bootstrap.py (undefined init placeholder, not imported by main.py)"
+  ],
+  "native_engine": {
+    "path": "engine_bridge/battle_runtime_bridge.so",
+    "git_ignored": true,
+    "purpose": "Local validation only",
+    "redistribution_license": "unverified",
+    "required_exports": [
+      "GameInitialize",
+      "BattleStart",
+      "SearchBegin",
+      "SearchStep",
+      "SearchEnd",
+      "SearchRelease"
+    ]
+  },
+  "files": [
+    {
+      "path": "engine_bridge/__init__.py",
+      "kind": "normalized_python",
+      "original_sha256": "49d7e195bd628863ede981e165021f86d76eeeb01d9289788284458c64729362",
+      "release_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "removed_transparent_wrappers": 2,
+      "removed_layout_markers": 1,
+      "normalized_ast_verified": true
+    },
+    {
+      "path": "engine_bridge/engine_action_gateway.py",
+      "kind": "normalized_python",
+      "original_sha256": "1453c6490f8b5b9248b0556024b48c8fd0250d9865f2f3798ebb58492aa31e09",
+      "release_sha256": "85615654fcf63772b094c7dcf0367ad41dae85c14e63d9bb4380986209bc749c",
+      "removed_transparent_wrappers": 16,
+      "removed_layout_markers": 1,
+      "normalized_ast_verified": true
+    },
+    {
+      "path": "engine_bridge/engine_battle_state.py",
+      "kind": "normalized_python",
+      "original_sha256": "56c379a930653a32bc72ce12b119c138de13b59361906ef93bd64701caf577b4",
+      "release_sha256": "51a00c975fb8886e40c5a49a9d384969b4fd76bdc31b28290a90470f93b13184",
+      "removed_transparent_wrappers": 12,
+      "removed_layout_markers": 1,
+      "normalized_ast_verified": true
+    },
+    {
+      "path": "engine_bridge/engine_schema_converters.py",
+      "kind": "normalized_python",
+      "original_sha256": "9fe33a12e40d786385fc7d0c14ca4e00e88f4d958a73723f1d2fb6877b1c31cf",
+      "release_sha256": "7aea384da74143ff8fa8be27711b960b347f9ae3debf9f01907de491851d7fb1",
+      "removed_transparent_wrappers": 6,
+      "removed_layout_markers": 1,
+      "normalized_ast_verified": true
+    },
+    {
+      "path": "engine_bridge/engine_simulation_bridge.py",
+      "kind": "normalized_python",
+      "original_sha256": "f6b1ca17b363812c5664ad216fb83d1052ad18cbf5f67c37b5d070e45b84ad2b",
+      "release_sha256": "0495d36010fafa1f2b63d763334cf07e255eeafe44a94afbf120a3c4878d109f",
+      "removed_transparent_wrappers": 2,
+      "removed_layout_markers": 1,
+      "normalized_ast_verified": true
+    },
+    {
+      "path": "main.py",
+      "kind": "normalized_python",
+      "original_sha256": "5dc60e5c7ae7eb7e9a3ee1424f639957f45cbc3c4a71183215bd121d1d23b4af",
+      "release_sha256": "7bad6bdfce5a6cf64bd2786dcbd5e7e69b8eea20a2fead9fbd5fb686f6079fc3",
+      "removed_transparent_wrappers": 6,
+      "removed_layout_markers": 1,
+      "normalized_ast_verified": true
+    },
+    {
+      "path": "policy_bridge/__init__.py",
+      "kind": "normalized_python",
+      "original_sha256": "d1d189f26617ca7cdf4d47c8c647cfeec2cc74857b9ea03cef892bd57fa14182",
+      "release_sha256": "59d50465e9508dee7e4b0fbed87fca9b398bf6ebcbb371cb2e267793ff542152",
+      "removed_transparent_wrappers": 2,
+      "removed_layout_markers": 1,
+      "normalized_ast_verified": true
+    },
+    {
+      "path": "policy_bridge/action_predictors/__init__.py",
+      "kind": "normalized_python",
+      "original_sha256": "13736d98f1f6c71d9a2c54466b545365b791a89b59f73d1e041cb8091cb30790",
+      "release_sha256": "df388953d30fb3f2be1c6e7b2e31a77f650f6324d6931111cb52c4e2959c6870",
+      "removed_transparent_wrappers": 2,
+      "removed_layout_markers": 1,
+      "normalized_ast_verified": true
+    },
+    {
+      "path": "policy_bridge/action_predictors/attack_turn_phase_decision_gate.py",
+      "kind": "normalized_python",
+      "original_sha256": "7e5212fde847f3815abefe2b2e7fed29b8b52bebf9929e60a6eca749db7f2d85",
+      "release_sha256": "c8e5db3982ffbc50689fbf6992478b0fa61ad7e84e01e2cec749707754b59776",
+      "removed_transparent_wrappers": 12,
+      "removed_layout_markers": 1,
+      "normalized_ast_verified": true
+    },
+    {
+      "path": "policy_bridge/action_predictors/behavioral_contract_essential_decision_policy.py",
+      "kind": "normalized_python",
+      "original_sha256": "d7e747841c566e37b32cfa2112cb642549eaf3ebd889367962d870457c5b1f98",
+      "release_sha256": "a68e8a1e66d1d0427c2302b832a4ac869e8e45c0658a265983faca2b9be2b387",
+      "removed_transparent_wrappers": 16,
+      "removed_layout_markers": 1,
+      "normalized_ast_verified": true
+    },
+    {
+      "path": "policy_bridge/action_predictors/checkmate_decision_priority_scorer.py",
+      "kind": "normalized_python",
+      "original_sha256": "99dc90fe5274655b70e39a0ecfcbbade1b47fb26c99e7cea429d5bedd7c946e6",
+      "release_sha256": "4f6f8b6142ed1bf6ebbbdb5c903d2332e077b54dbf9bf8f5087644eae88db22e",
+      "removed_transparent_wrappers": 8,
+      "removed_layout_markers": 1,
+      "normalized_ast_verified": true
+    },
+    {
+      "path": "policy_bridge/action_predictors/counterparty_opponent_type_routing_service.py",
+      "kind": "normalized_python",
+      "original_sha256": "fdf8718081f1b40386ddd75c95cb3c48066d7df4202a595d67a481d046f0034b",
+      "release_sha256": "469ff8ad123d3df7dfa7bcbbe5b3058d441cc59faf8b4c68cab8f3cccf2e7c9d",
+      "removed_transparent_wrappers": 8,
+      "removed_layout_markers": 1,
+      "normalized_ast_verified": true
+    },
+    {
+      "path": "policy_bridge/action_predictors/game_card_representation_service.py",
+      "kind": "normalized_python",
+      "original_sha256": "861301725cf0f423ac3edb336d66c97f2138d1315ca7319524f92000566d5baa",
+      "release_sha256": "b09eeadfe7a5c85ed9d0c87960cd782357413155199277bc8912543cb8a4c16c",
+      "removed_transparent_wrappers": 10,
+      "removed_layout_markers": 1,
+      "normalized_ast_verified": true
+    },
+    {
+      "path": "policy_bridge/action_predictors/seen_situation_routing_service.py",
+      "kind": "normalized_python",
+      "original_sha256": "7a7046e01db87f86f8bc2d92043b68710aa6add56805e4507d2b2886203cabb2",
+      "release_sha256": "63ee2b9887b15cb0f96d31c37d5ce249cbfa5bf06dba307ddb4c4485ff665a82",
+      "removed_transparent_wrappers": 6,
+      "removed_layout_markers": 1,
+      "normalized_ast_verified": true
+    },
+    {
+      "path": "policy_bridge/action_predictors/shared_decision_policy.py",
+      "kind": "normalized_python",
+      "original_sha256": "e3466e7e9d9145ed472ff5b154de95c48206e4423d5d988a24d6aad4eae6e618",
+      "release_sha256": "284a65eced71310d25d15135c79c2ff093254e76edd0998b7d99b6141e052c78",
+      "removed_transparent_wrappers": 30,
+      "removed_layout_markers": 1,
+      "normalized_ast_verified": true
+    },
+    {
+      "path": "policy_bridge/action_predictors/what_if_outcome_value_priority_scorer.py",
+      "kind": "normalized_python",
+      "original_sha256": "9eafa3f098be84d7b39cf52b2ef604b13e57eb09d795e5dc317161fd58c97dfe",
+      "release_sha256": "768ad2541005ac7ca5c43f8b0014103e4456187b7d61fde81cc0c7fa570b6741",
+      "removed_transparent_wrappers": 14,
+      "removed_layout_markers": 1,
+      "normalized_ast_verified": true
+    },
+    {
+      "path": "policy_bridge/battlefield_environment/__init__.py",
+      "kind": "normalized_python",
+      "original_sha256": "e7bbb074559ca9f9c74981c0ba71b38febb4ef65fa6d936b7a60611e7d408893",
+      "release_sha256": "8eda22d6ecb6db1b4beb3a480562f315bd6af62e057928a213f39db0c4f80286",
+      "removed_transparent_wrappers": 2,
+      "removed_layout_markers": 1,
+      "normalized_ast_verified": true
+    },
+    {
+      "path": "policy_bridge/battlefield_environment/engine_action_history.py",
+      "kind": "normalized_python",
+      "original_sha256": "eae5c8e4f94e8fdb9d16052d0cb47a182daac1d3f110abf0bfcb1aa5c1b1f0ae",
+      "release_sha256": "b0d68235e524663c8c1c9bbd1274abeb00038a7206a53c68521c7ba9b7bb4252",
+      "removed_transparent_wrappers": 18,
+      "removed_layout_markers": 1,
+      "normalized_ast_verified": true
+    },
+    {
+      "path": "policy_bridge/battlefield_environment/engine_choice_constraints.py",
+      "kind": "normalized_python",
+      "original_sha256": "9fbd2be2e58d64d009a34c706c20b5e6bf28c24e66381838237c6fbd0c309a23",
+      "release_sha256": "2577cd16f4e4c725680b4a6b22230f2be80102514046204993b00f20cc300678",
+      "removed_transparent_wrappers": 6,
+      "removed_layout_markers": 1,
+      "normalized_ast_verified": true
+    },
+    {
+      "path": "policy_bridge/battlefield_environment/engine_observation_schema.py",
+      "kind": "normalized_python",
+      "original_sha256": "4259b4a000ad3ed129f6a94e193fbcea0f4ee90a70eb31cadd224bb829fe0243",
+      "release_sha256": "789b9a3a05eaa3840a0332db448deab46d2ddb9f665e7ba97ae024dee22bde0d",
+      "removed_transparent_wrappers": 54,
+      "removed_layout_markers": 1,
+      "normalized_ast_verified": true
+    },
+    {
+      "path": "policy_bridge/checkmate_planner/__init__.py",
+      "kind": "normalized_python",
+      "original_sha256": "37175a1b0e332e360e2608d015a71c2c0aa9fda95942d47b1364acd4416d298d",
+      "release_sha256": "2b0d7135fedb9ce813ab48c5749d1777ef8f99d035031d65b1721bca8ac107f0",
+      "removed_transparent_wrappers": 2,
+      "removed_layout_markers": 1,
+      "normalized_ast_verified": true
+    },
+    {
+      "path": "policy_bridge/checkmate_planner/checkmate_learning_labels.py",
+      "kind": "normalized_python",
+      "original_sha256": "182d2a4ec14b6cbf49d1874450786779b22cd507e60e8892feb843e1faa1dd3e",
+      "release_sha256": "e0551283cead4fdea4d41c926625f7f94bf058af4d3e45e69b58fcb02a5bb79d",
+      "removed_transparent_wrappers": 6,
+      "removed_layout_markers": 1,
+      "normalized_ast_verified": true
+    },
+    {
+      "path": "policy_bridge/checkmate_planner/checkmate_planner_simulator_state_capture.py",
+      "kind": "normalized_python",
+      "original_sha256": "9c22af4a37d9745ca1120269e69e16b507cb64f6fd45814d57074fd1af189a4e",
+      "release_sha256": "1e9bb19f7878b6716f1f8bea275be1ee300cc67db10420b904f7106bec9dae74",
+      "removed_transparent_wrappers": 20,
+      "removed_layout_markers": 1,
+      "normalized_ast_verified": true
+    },
+    {
+      "path": "policy_bridge/checkmate_planner/checkmate_rule_schema.py",
+      "kind": "normalized_python",
+      "original_sha256": "6ea8d2071cc2ef757db17e2dbbb069793ccbe3f5c7e9de23d9a1afdddc3a90b2",
+      "release_sha256": "ab28ebfcf7dfb88d79a8d534e2ccce076fb57463326a559b1dc2b0f77feae1f1",
+      "removed_transparent_wrappers": 18,
+      "removed_layout_markers": 1,
+      "normalized_ast_verified": true
+    },
+    {
+      "path": "policy_bridge/checkmate_planner/checkmate_scoring_model.py",
+      "kind": "normalized_python",
+      "original_sha256": "584f3dd1b47346443fc268f0a202de8fcaa9002b0fc6e6084f23352b47eaff13",
+      "release_sha256": "115b645ca3ede8b6bc54d2cadecdc6b3ac926f97df56f9731758b0d6aba43b87",
+      "removed_transparent_wrappers": 18,
+      "removed_layout_markers": 1,
+      "normalized_ast_verified": true
+    },
+    {
+      "path": "policy_bridge/checkmate_planner/evidence_decision_search.py",
+      "kind": "normalized_python",
+      "original_sha256": "ee045ee5ad280c67ffefc240e5eb9f8b6101426c64cf57acd1d83a384fef7e73",
+      "release_sha256": "5db7d4d68a70dad24e94f53fe2f83dd923a8b923ea50fa7f36028efcc86912a4",
+      "removed_transparent_wrappers": 22,
+      "removed_layout_markers": 1,
+      "normalized_ast_verified": true
+    },
+    {
+      "path": "policy_bridge/checkmate_planner/immediate_inspection.py",
+      "kind": "normalized_python",
+      "original_sha256": "741183546232d3462a11f7c0825bf558a9597c80128fed76243bdcf46248d251",
+      "release_sha256": "50ad291aa23c578797985e7e70651a864966c8c621064a669d27ff1e8b80dcd4",
+      "removed_transparent_wrappers": 34,
+      "removed_layout_markers": 1,
+      "normalized_ast_verified": true
+    },
+    {
+      "path": "policy_bridge/checkmate_planner/information_set_record.py",
+      "kind": "normalized_python",
+      "original_sha256": "4f435ba5bc62af8e7752a06e5c5b2c30e4de210a1ec2c1ac485c15c8d8c87672",
+      "release_sha256": "f25cffb5b7a508eaf252484177e70e59e18e6f407996325c75eab6d6696abd54",
+      "removed_transparent_wrappers": 12,
+      "removed_layout_markers": 1,
+      "normalized_ast_verified": true
+    },
+    {
+      "path": "policy_bridge/checkmate_planner/situation_canonical_service.py",
+      "kind": "normalized_python",
+      "original_sha256": "c1233ac2bac1a7e9feba9298927492bae26bb0385808ffca4e44ab1e1752acab",
+      "release_sha256": "8eeac32648daf2028e431cbb4c5e7607bd73de45923b964ce88eb673c4c6bb40",
+      "removed_transparent_wrappers": 8,
+      "removed_layout_markers": 1,
+      "normalized_ast_verified": true
+    },
+    {
+      "path": "policy_bridge/checkmate_planner/uncertainty_happenings.py",
+      "kind": "normalized_python",
+      "original_sha256": "e220d5cf44a9f3ceab3c47ed93453ddef142b3a33db25c248cf12408b015c583",
+      "release_sha256": "f1856c57e44dc946ba636564dab55be5dc21fbaae9a1aac52a995a85f54ba710",
+      "removed_transparent_wrappers": 6,
+      "removed_layout_markers": 1,
+      "normalized_ast_verified": true
+    },
+    {
+      "path": "policy_bridge/checkmate_planner/uncertainty_hypothesis_decision_search.py",
+      "kind": "normalized_python",
+      "original_sha256": "83e375b9664c203970c2dd51476de00ad03bf8dd617718aa7ab643f467035597",
+      "release_sha256": "682f42481f5cd30deddebd4fc2f87760d6318c3ddd131db1966476cd113c1918",
+      "removed_transparent_wrappers": 46,
+      "removed_layout_markers": 1,
+      "normalized_ast_verified": true
+    },
+    {
+      "path": "policy_bridge/decision_inference_bridge.py",
+      "kind": "normalized_python",
+      "original_sha256": "1267532d8889269e382df8a047ec6bbe2e44e46526e1a6c734dbd70f930c0aa8",
+      "release_sha256": "4a79ffaccece19658ed7b60f10d603401d783e0a73640cba066f52564b222ddf",
+      "removed_transparent_wrappers": 70,
+      "removed_layout_markers": 1,
+      "normalized_ast_verified": true
+    },
+    {
+      "path": "policy_bridge/decision_message_contract.py",
+      "kind": "normalized_python",
+      "original_sha256": "97b658413c5979336fc88ec7d45fd4f44f307d331547c46195e53f4458a11f77",
+      "release_sha256": "89dd8f7a228ed26c1aa3959e399a18787fc4b64469d91ae14f253ab7a947292e",
+      "removed_transparent_wrappers": 6,
+      "removed_layout_markers": 1,
+      "normalized_ast_verified": true
+    },
+    {
+      "path": "policy_bridge/decision_search/__init__.py",
+      "kind": "normalized_python",
+      "original_sha256": "def55f80b144bec47aaaf2e66669cb8a3e3983efa3badc7e8419761038bc0b8f",
+      "release_sha256": "5a0e322132e16e43b608e3780952332aed21e3adf1eeb8f8e581aef9254c76e3",
+      "removed_transparent_wrappers": 2,
+      "removed_layout_markers": 1,
+      "normalized_ast_verified": true
+    },
+    {
+      "path": "policy_bridge/decision_search/counterparty_loadout_classifier.py",
+      "kind": "normalized_python",
+      "original_sha256": "141bc394953513a829cf81b20af4802605695b915910cb291c010aad72b87c9c",
+      "release_sha256": "aa31be2cf551acefbb53deb1ced1edf8dd420697c66e026288865ce8634e0820",
+      "removed_transparent_wrappers": 28,
+      "removed_layout_markers": 1,
+      "normalized_ast_verified": true
+    },
+    {
+      "path": "policy_bridge/decision_search/decision_policy_alternatives.py",
+      "kind": "normalized_python",
+      "original_sha256": "90a443f68f77cbc89e78cdd25bb5c6c5923c5d39abe52e23adc45ec3307adf02",
+      "release_sha256": "e18f134d9aa5ef17a25fe32700b581eaedc82590351decae78605f4dddbd3b06",
+      "removed_transparent_wrappers": 8,
+      "removed_layout_markers": 1,
+      "normalized_ast_verified": true
+    },
+    {
+      "path": "policy_bridge/decision_search/decision_policy_voting_group_metrics_engine.py",
+      "kind": "normalized_python",
+      "original_sha256": "a9d9f8eddc45d56006223dd2731ce3fa231c80006d4d42a2b85bb0f1d1fcbcf3",
+      "release_sha256": "f12f08ce11656552728d42809ab52bcfc9257cd5a1feea7a0f471662470e59ee",
+      "removed_transparent_wrappers": 6,
+      "removed_layout_markers": 1,
+      "normalized_ast_verified": true
+    },
+    {
+      "path": "policy_bridge/decision_search/evidence_registry_decision_router.py",
+      "kind": "normalized_python",
+      "original_sha256": "9ff2c3cf1888b5e223234eb86fe48f7cbeab0bd64552df9331de361e7b22bd83",
+      "release_sha256": "92141ad01d1db909a811c72131aaa02e8a96b2b40b3ba6831784c24ea95f9077",
+      "removed_transparent_wrappers": 14,
+      "removed_layout_markers": 1,
+      "normalized_ast_verified": true
+    },
+    {
+      "path": "policy_bridge/decision_search/evidence_registry_runtime_bridge.py",
+      "kind": "normalized_python",
+      "original_sha256": "f89946887020ea802afd52f7b529340971c9c82f12988073bc90b8f622893e31",
+      "release_sha256": "2a4fda8ed6d6531af85a6171e8e655888924a1da6373a38a005b3825e10e3b20",
+      "removed_transparent_wrappers": 40,
+      "removed_layout_markers": 1,
+      "normalized_ast_verified": true
+    },
+    {
+      "path": "policy_bridge/decision_search/evidence_registry_scenario_set.py",
+      "kind": "normalized_python",
+      "original_sha256": "19fa8c722233e1533cadd79d2d615530dc2d0ac7674f9ae18b61f4b0bd186b37",
+      "release_sha256": "93b9bd89a723aca02300cd47f7321e814785895d49dca19c6259c568b3d8023d",
+      "removed_transparent_wrappers": 32,
+      "removed_layout_markers": 1,
+      "normalized_ast_verified": true
+    },
+    {
+      "path": "policy_bridge/decision_search/simulation_bridge_move_metrics_engine.py",
+      "kind": "normalized_python",
+      "original_sha256": "cb1d6b12a616d16fe15fe32e90ad389cb28a46da2c9e730403a437fce3b50ae8",
+      "release_sha256": "43785697b4c626e8276eefa2b23cb79c9c6a783822e206e05a786caf93a47677",
+      "removed_transparent_wrappers": 36,
+      "removed_layout_markers": 1,
+      "normalized_ast_verified": true
+    },
+    {
+      "path": "policy_bridge/episode_archive/__init__.py",
+      "kind": "normalized_python",
+      "original_sha256": "47c21e21144e1a1550260fe8c3a90c9c6158aae3326fb5bed079c2e17c9888ba",
+      "release_sha256": "552beb814768db06ff469c01d89354dc887476d674a55cadcbd9ed160fd9b37e",
+      "removed_transparent_wrappers": 2,
+      "removed_layout_markers": 1,
+      "normalized_ast_verified": true
+    },
+    {
+      "path": "policy_bridge/episode_archive/card_repository_index.py",
+      "kind": "normalized_python",
+      "original_sha256": "0837bede9763f0fb4df7a47196e49042e3b1d3fa78d2c661063a80e3874048cb",
+      "release_sha256": "2e1f5b0ac0c44b5bbf34e286917252867b3e80355c45c479b54f8d8174436168",
+      "removed_transparent_wrappers": 14,
+      "removed_layout_markers": 1,
+      "normalized_ast_verified": true
+    },
+    {
+      "path": "policy_bridge/policy_fitting/__init__.py",
+      "kind": "normalized_python",
+      "original_sha256": "4467202d3ec8f48e668487416256b8e87042ebdced43b8236303c554107cf99d",
+      "release_sha256": "5b2b2afee5c8d7ee65434c1c2b9d62d92994b2edc2f1d43ed2dee0c7ca36e516",
+      "removed_transparent_wrappers": 2,
+      "removed_layout_markers": 1,
+      "normalized_ast_verified": true
+    },
+    {
+      "path": "policy_bridge/policy_fitting/policy_parameter_registry.py",
+      "kind": "normalized_python",
+      "original_sha256": "555a448e1452903c0646b11f9bc0a30dd55c8ee903fa0a5747906b2af84db30a",
+      "release_sha256": "0d30349445cf26effcddb42f5bcde83b329dc5f28ea4d54e73d68069b1ef1e86",
+      "removed_transparent_wrappers": 14,
+      "removed_layout_markers": 1,
+      "normalized_ast_verified": true
+    },
+    {
+      "path": "policy_bridge/shared_schema_primitives.py",
+      "kind": "normalized_python",
+      "original_sha256": "947b0902aafd6875386414e7c442adcc523913ca9556c4b20394ebe1978e539c",
+      "release_sha256": "bd2ed79ae4300778a385b2345190e11653c68bf6a569b54dc4cae13294c1a28c",
+      "removed_transparent_wrappers": 2,
+      "removed_layout_markers": 1,
+      "normalized_ast_verified": true
+    },
+    {
+      "path": "candidate_policy.pt",
+      "kind": "unchanged_asset",
+      "original_sha256": "5364a2abaee0e425fd6595f89825765d11e2602d96a32a7ef7c42b4233348dbc",
+      "release_sha256": "5364a2abaee0e425fd6595f89825765d11e2602d96a32a7ef7c42b4233348dbc"
+    },
+    {
+      "path": "opponent_routed_policy.pt",
+      "kind": "unchanged_asset",
+      "original_sha256": "d14b5c992c36a1af5a10afa196102be46f8a5db8317666c03fea3b241c4524d7",
+      "release_sha256": "d14b5c992c36a1af5a10afa196102be46f8a5db8317666c03fea3b241c4524d7"
+    },
+    {
+      "path": "deck.csv",
+      "kind": "unchanged_asset",
+      "original_sha256": "25ff15074735475aeefd23ea3b5a8d4a7cd1a9bcf8dd55e6e2f4c29b2278f09d",
+      "release_sha256": "25ff15074735475aeefd23ea3b5a8d4a7cd1a9bcf8dd55e6e2f4c29b2278f09d"
+    },
+    {
+      "path": "search_card_registry.json",
+      "kind": "unchanged_asset",
+      "original_sha256": "baedd0328a50dbc98ed7c6f040694b0491cf34abdaa48dafc57bf2bd20c2f9af",
+      "release_sha256": "baedd0328a50dbc98ed7c6f040694b0491cf34abdaa48dafc57bf2bd20c2f9af"
+    },
+    {
+      "path": "opponent_strategy_priors.json",
+      "kind": "unchanged_asset",
+      "original_sha256": "9894a46b9f269cbf56b078b622bb5000444d877aa694aded917861807837e210",
+      "release_sha256": "9894a46b9f269cbf56b078b622bb5000444d877aa694aded917861807837e210"
+    },
+    {
+      "path": "engine_bridge/battle_runtime_bridge.so",
+      "kind": "ignored_local_validation_engine",
+      "original_sha256": "d21ac5c7c20fe8a8eba5096d1e27d27755f1f7f575079daaebac457d229ea4bd",
+      "release_sha256": "d21ac5c7c20fe8a8eba5096d1e27d27755f1f7f575079daaebac457d229ea4bd"
+    }
+  ]
+}

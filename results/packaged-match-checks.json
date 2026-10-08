@@ -1,0 +1,47 @@
+{
+  "status": "passed",
+  "scope": "Two additional curated-package execution checks, separate from the ten-case original-artifact table",
+  "cases": [
+    {
+      "case": "release_policy",
+      "status": "completed",
+      "candidate_outcome": "loss",
+      "counters": {
+        "accepted_decisions": 219,
+        "baseline_accepted_decisions": 114,
+        "baseline_attempts": 114,
+        "candidate_accepted_decisions": 105,
+        "candidate_attempts": 105,
+        "candidate_diagnostics": 105,
+        "search_applied": 0,
+        "search_attempted": 0
+      },
+      "classifier_routes": {
+        "default": 105
+      },
+      "raw_terminal_result_verified": true,
+      "complete_candidate_observations_saved": true
+    },
+    {
+      "case": "release_target",
+      "status": "completed",
+      "candidate_outcome": "win",
+      "counters": {
+        "accepted_decisions": 130,
+        "baseline_accepted_decisions": 50,
+        "baseline_attempts": 50,
+        "candidate_accepted_decisions": 80,
+        "candidate_attempts": 80,
+        "candidate_diagnostics": 80,
+        "search_applied": 1,
+        "search_attempted": 1
+      },
+      "classifier_routes": {
+        "default": 12,
+        "specialist": 68
+      },
+      "raw_terminal_result_verified": true,
+      "complete_candidate_observations_saved": true
+    }
+  ]
+}

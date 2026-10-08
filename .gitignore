@@ -1,0 +1,10 @@
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+# Native engine supplied separately; redistribution status is unverified.
+engine_bridge/*.so
+engine_bridge/*.dll
+engine_bridge/*.dylib
+# Local evaluation runs.
+artifacts/
