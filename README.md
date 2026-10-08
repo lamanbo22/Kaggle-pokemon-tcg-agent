@@ -59,27 +59,6 @@ Use a new output path for each run. `--seat 1` changes the agent's player seat. 
 
 The runner checks legal indices and selection counts, records the terminal engine observation, and reports routing and search diagnostics. The external `timeout` bounds execution if a native call does not return.
 
-## Local validation
-
-Validation on October 7, 2026 used Python 3.12.3, PyTorch 2.14.1+cu132, and NumPy 2.5.2 under Ubuntu/WSL. All inference ran on **CPU**; no training was performed.
-
-| Opponent | Games | Wins | Losses | Draws |
-|---|---:|---:|---:|---:|
-| Random legal selections | 8 | 8 | 0 | 0 |
-| Default neural policy without routing or search | 2 | 1 | 1 | 0 |
-
-The ten checks cover both player seats, the submitted deck, and a preselected target opponent deck. All 639 agent decisions were accepted. The specialist handled 73 decisions. Search was attempted six times and made zero overrides. This small suite checks execution and branch coverage; it does not establish competition performance or a search advantage.
-
-Baseline seeds were 42 and 43 for random play and 44 for the neural baseline. Native engine randomness was uncontrolled because its optional random-device shim was absent. Swapping seats therefore does not produce identical shuffles. Submitted search settings and checkpoints were unchanged.
-
-Results are in [`results/matches.csv`](results/matches.csv) and [`results/validation-summary.json`](results/validation-summary.json). Independent neural replay checks found identical actions, log probabilities, and values before and after source cleanup on 122 observations for each policy: [`results/release-equivalence.json`](results/release-equivalence.json).
-
-Two additional games verified the curated package itself. Both reached valid terminal states; one exercised the specialist route and a search override. These separate execution checks are recorded in [`results/packaged-match-checks.json`](results/packaged-match-checks.json).
-
-```bash
-python -m unittest discover -s tests -p 'test_*.py'
-```
-
 ## Code guide
 
 | Path | Purpose |
@@ -93,9 +72,3 @@ python -m unittest discover -s tests -p 'test_*.py'
 | `scripts/replay_demo.py` | Engine-free demonstration of both policies |
 | `scripts/run_match.py` | Local games against baseline agents |
 | `provenance.json` | Source selection, cleanup rules, and hashes |
-
-## Version record
-
-This release derives from the author's archive and includes its runtime import closure and both original checkpoints. The archive labels this build `EXPORTED_UNPROMOTED`; local results above belong to this exact artifact. A competition ranking is not assigned to it here.
-
-Preparation removes generated no-op exception wrappers and layout markers and normalizes formatting. Executable branches and model assets are preserved. Unreferenced experiment scripts remain in the original archive. This is an inference release; reproducing the original training run requires its separate data, configurations, and logs.
